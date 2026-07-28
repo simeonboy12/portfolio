@@ -3,7 +3,6 @@ nav {
     padding: 20px;
     text-align: center;
 }
-}
 
 body {
     font-family: Arial, sans-serif;
@@ -121,4 +120,28 @@ footer {
 
 footer a {
     color: #00aaff;
+}
+.projects {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: #0077ff;
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    flex: 1;
+    min-width: 220px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: white;
 }
