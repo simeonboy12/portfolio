@@ -248,26 +248,60 @@ footer a {
 
 
 /* Mobile */
-
+ 
 @media(max-width:768px){
 
     nav {
-        flex-direction:column;
+        flex-direction: column;
     }
 
     nav a {
-        margin:10px;
+        margin: 10px;
     }
-
 
     .hero h1 {
-        font-size:30px;
+        font-size: 30px;
     }
-
 
     section {
-        margin:20px;
-        padding:25px;
+        margin: 20px;
+        padding: 25px;
     }
 
+}
+
+
+/* Dark Mode */
+
+body.dark {
+    background: #111;
+    color: white;
+}
+
+
+body.dark section {
+    background: #1f1f1f;
+    color: white;
+}
+
+
+body.dark h2,
+body.dark h1 {
+    color: #00bfff;
+}
+
+
+body.dark p {
+    color: #ddd;
+}
+
+
+body.dark .project-card {
+    background: #222;
+}
+
+
+body.dark header,
+body.dark footer {
+    background: #000;
 }
