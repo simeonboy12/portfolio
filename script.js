@@ -1,16 +1,24 @@
-const darkButton = document.getElementById("darkMode");
+document.addEventListener("DOMContentLoaded", function () {
 
-darkButton.addEventListener("click", function () {
+    const darkButton = document.getElementById("darkMode");
 
-    document.body.classList.toggle("dark");
+    if (darkButton) {
 
-    if (document.body.classList.contains("dark")) {
+        darkButton.addEventListener("click", function () {
 
-        darkButton.textContent = "☀️ Light Mode";
+            document.body.classList.toggle("dark");
 
-    } else {
+            if (document.body.classList.contains("dark")) {
 
-        darkButton.textContent = "🌙 Dark Mode";
+                darkButton.textContent = "☀️ Light Mode";
+
+            } else {
+
+                darkButton.textContent = "🌙 Dark Mode";
+
+            }
+
+        });
 
     }
 
