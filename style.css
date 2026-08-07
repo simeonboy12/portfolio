@@ -4,12 +4,20 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f4f7fc;
     color: #333;
-    line-height: 1.7;
+    line-height: 1.6;
+    transition: 0.4s;
 }
+
+
+/* Header */
 
 header {
     background: #0b1f3a;
@@ -37,16 +45,19 @@ nav a {
     text-decoration: none;
     margin-left: 20px;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 nav a:hover {
     color: #00bfff;
 }
 
+
+/* Hero */
+
 .hero {
     text-align: center;
-    padding: 70px 20px;
+    padding: 80px 20px;
+    animation: fadeIn 1s ease;
 }
 
 .hero img {
@@ -55,24 +66,28 @@ nav a:hover {
     border-radius: 50%;
     object-fit: cover;
     border: 6px solid #0077ff;
-    box-shadow: 0 10px 25px rgba(0,0,0,.2);
 }
+
 
 .hero h1 {
     margin-top: 20px;
-    color: #0077ff;
     font-size: 40px;
+    color: #0077ff;
 }
+
 
 .hero h2 {
     color: #555;
-    margin: 10px 0;
 }
+
 
 .hero p {
     max-width: 700px;
     margin: 20px auto;
 }
+
+
+/* Button */
 
 .button {
     display: inline-block;
@@ -86,8 +101,11 @@ nav a:hover {
 }
 
 .button:hover {
-    background: #005fd1;
+    transform: translateY(-5px);
 }
+
+
+/* Sections */
 
 section {
     max-width: 1100px;
@@ -95,122 +113,161 @@ section {
     background: white;
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    animation: slideUp 0.8s ease;
 }
+
 
 section h2 {
     text-align: center;
-    margin-bottom: 20px;
     color: #0077ff;
+    margin-bottom: 25px;
 }
+
+
+/* Skills */
 
 .skills {
     display: flex;
+    gap: 15px;
     justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
 }
+
 
 .skills div {
     background: #0077ff;
     color: white;
-    padding: 20px 30px;
+    padding: 15px 25px;
     border-radius: 10px;
-    font-weight: bold;
-    transition: transform .3s;
 }
 
-.skills div:hover {
-    transform: translateY(-5px);
-}
+
+/* Projects */
 
 .projects {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     gap: 20px;
-    flex-wrap: wrap;
 }
 
+
 .project-card {
-    flex: 1;
-    min-width: 250px;
     background: #0077ff;
     color: white;
     padding: 25px;
-    border-radius: 12px;
-    transition: transform .3s;
+    border-radius: 15px;
+    transition: 0.3s;
 }
+
 
 .project-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
 }
 
-.project-card h3 {
-    margin-bottom: 10px;
+
+.project-card a {
+    color: white;
+    font-weight: bold;
 }
 
-form {
-    max-width: 700px;
-    margin: auto;
-}
+
+/* Contact */
 
 input,
 textarea {
+
     width: 100%;
     padding: 15px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 16px;
+    border: 1px solid #ccc;
+
 }
 
+
 button {
+
     background: #0077ff;
     color: white;
     border: none;
     padding: 15px 30px;
     border-radius: 30px;
     cursor: pointer;
-    font-size: 16px;
+
 }
 
-button:hover {
-    background: #005fd1;
-}
+
+/* Footer */
 
 footer {
+
     background: #0b1f3a;
     color: white;
     text-align: center;
     padding: 30px;
-    margin-top: 40px;
+
 }
+
 
 footer a {
+
     color: #00bfff;
-    text-decoration: none;
+
 }
 
-footer a:hover {
-    text-decoration: underline;
+
+/* Animations */
+
+@keyframes fadeIn {
+
+    from {
+        opacity:0;
+    }
+
+    to {
+        opacity:1;
+    }
+
 }
 
-@media (max-width: 768px) {
+
+@keyframes slideUp {
+
+    from {
+        transform:translateY(30px);
+        opacity:0;
+    }
+
+    to {
+        transform:translateY(0);
+        opacity:1;
+    }
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
     nav {
-        flex-direction: column;
-        text-align: center;
+        flex-direction:column;
     }
 
     nav a {
-        display: block;
-        margin: 10px 0;
+        margin:10px;
     }
+
 
     .hero h1 {
-        font-size: 30px;
+        font-size:30px;
     }
 
-    .projects,
-    .skills {
-        flex-direction: column;
+
+    section {
+        margin:20px;
+        padding:25px;
     }
+
 }
